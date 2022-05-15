@@ -34,84 +34,18 @@ namespace ariel{
                     ordered.push_back("asd");
                     ordered.push_back("qwe");
                     ordered.push_back("zxc");
-                    // this->curr = start;
-                    
-                    // if(order == LEVEL_ORDER){
-                    //     this->ordered.clear();
-                    //     if (start != nullptr) {
-                    //         this->ordered.push_back(start->data);
-                    //     }
-                    //     fill_level_order(start);
-                    // }
-                    // else if(order == REVERSE_LEVEL_ORDER){
-                    //     this->ordered.clear();
-                    //     if (start != nullptr) {
-                    //         this->ordered.insert(this->ordered.begin(), start->data);
-                    //     }
-                    //     fill_rev_order(start);
-                    //     // curr = this->ordered.at((unsigned long)0);
-                    // }
-                    // else if(order == PRE_ORDER){
-                    //     this->ordered.clear();
-                    //     if (start != nullptr) {
-                    //         this->ordered.push_back(start->data);
-                    //     }
-                    //     fill_preorder(start);
-                    // }
-                    // this->ordered.push_back(nullptr);
                 }
 
-                // void fill_level_order(Node *head){
-                //     if(head!=nullptr){
-                //         for(size_t i=0 ; i<head->childs.size() ; i++){
-                //             this->ordered.push_back(head->childs[i]->data);
-                //         }
-                //         for(size_t i=0 ; i<head->childs.size() ; i++){
-                //             fill_level_order(head->childs[i]);
-                //         }
-                //     }
-                // }
-
-                // void fill_rev_order(Node *head){
-                //     if(head!=nullptr){
-                //         for(size_t i=head->childs.size();i>0;i--){
-                //             this->ordered.insert(this->ordered.begin(), head->childs[i-1]->data);
-                //         }
-                //         for(size_t i=head->childs.size();i>0;i--){
-                //             fill_rev_order(head->childs[i-1]);
-                //         } 
-                //     }
-                // }
-
-                // void fill_preorder(Node *head){
-                //     if(head!=nullptr){
-                //         for(size_t i=0;i<head->childs.size();i++){
-                //             this->ordered.push_back(head->childs[i]->data);
-                //             fill_preorder(head->childs[i]);
-                //         }
-                //     }
-                // }
-
                 bool operator==(const iterator_level&it)const{
-                    // if (curr == nullptr || it.curr == nullptr) {
-                    //         return it.curr == curr;
-                    // }
                         return true;
-                    }
+                }
                 bool operator!=(const iterator_level&it)const{
                         return true;
-                    }
-                // std::string& operator*()const{
-                //         return curr->data;
-                //     }
+                }
 
-                // std::string* operator->() const {
-                //         return &(curr->data);
-                //     }
                 iterator_level &operator++() {
                     if (!ordered.empty()) {
                         ordered.erase(ordered.begin());
-                        // curr = this->ordered.at((unsigned long)0);
                     }
                     return *this;
                 }
@@ -138,25 +72,15 @@ namespace ariel{
     
 
                 bool operator==(const iterator_reverse&it)const{
-                    // if (curr == nullptr || it.curr == nullptr) {
-                    //         return it.curr == curr;
-                    // }
                         return true;
-                    }
+                }
                 bool operator!=(const iterator_reverse&it)const{
                         return true;
                     }
-                // std::string& operator*()const{
-                //         return curr->data;
-                //     }
 
-                // std::string* operator->() const {
-                //         return &(curr->data);
-                //     }
                 iterator_reverse &operator++() {
                     if (!ordered.empty()) {
                         ordered.erase(ordered.begin());
-                        // curr = this->ordered.at((unsigned long)0);
                     }
                     return *this;
                 }
@@ -183,25 +107,16 @@ namespace ariel{
     
 
                 bool operator==(const iterator_pre&it)const{
-                    // if (curr == nullptr || it.curr == nullptr) {
-                    //         return it.curr == curr;
-                    // }
-                        return true;
-                    }
+                    return true;
+                }
+
                 bool operator!=(const iterator_pre&it)const{
                         return true;
-                    }
-                // std::string& operator*()const{
-                //         return curr->data;
-                //     }
-
-                // std::string* operator->() const {
-                //         return &(curr->data);
-                //     }
+                }
+        
                 iterator_pre &operator++() {
                     if (!ordered.empty()) {
                         ordered.erase(ordered.begin());
-                        // curr = this->ordered.at((unsigned long)0);
                     }
                     return *this;
                 }
@@ -230,9 +145,8 @@ namespace ariel{
 
         public:
             OrgChart();
-            OrgChart& add_root(const std::string &job);
-            OrgChart& add_sub(const std::string &bos,const std::string &sub);
-            // Node* find_node(const std::string &name);
+            OrgChart& add_root(const std::string &father);
+            OrgChart& add_sub(const std::string &father,const std::string &son);
             friend std::ostream &operator<<(std::ostream &os,  OrgChart &org);
 
 			std::string* begin_level_order();

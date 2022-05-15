@@ -7,10 +7,10 @@ namespace ariel
     OrgChart::OrgChart(){
         // constuctor
     }
-    OrgChart& OrgChart::add_root(const std::string &job){
+    OrgChart& OrgChart::add_root(const std::string &father){
         return *this;
     }
-    OrgChart& OrgChart::add_sub(const std::string &bos,const std::string &sub){
+    OrgChart& OrgChart::add_sub(const std::string &father,const std::string &son){
         return *this;
     }
 
