@@ -225,7 +225,6 @@ namespace ariel{
 
 
         std::string s = "esther";
-        int x = 8;
         private:
             Node *root;
 
@@ -242,8 +241,8 @@ namespace ariel{
 			std::string* reverse_order();
             std::string* begin_preorder();
             std::string* end_preorder();
-			int* begin();
-			int* end();
+			std::string* begin();
+			std::string* end();
             ~OrgChart();
 
     };

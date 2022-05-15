@@ -90,11 +90,8 @@ TEST_CASE("for each") {
         .add_sub("b3", "c31");
     std::string order = "";
     std::string correct = "a b1 b2 b3 c11 c31 ";
-    for (int element : organization){
-        std::stringstream ss;
-        ss << element;
-        std::string str = ss.str();
-        order += str;
+    for (std::string element : organization){
+        order += element;
         order += " ";
     }
     CHECK_EQ(order , correct);
