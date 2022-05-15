@@ -49,13 +49,13 @@ namespace ariel
         // return &(ans.ordered.at((unsigned long) (ans.ordered.size()-1))); 
         return &s;
     }
-    string* OrgChart::begin(){
+    int* OrgChart::begin(){
         // return begin_level_order();
-        return &s;
+        return &x;
     }
-    string* OrgChart::end(){
+    int* OrgChart::end(){
         // return end_level_order();
-        return &s;
+        return &x;
     }
     OrgChart::~OrgChart(){
     }
